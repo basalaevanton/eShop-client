@@ -1,5 +1,5 @@
-import { StartActionCreators } from "./startStore/action-creators";
+import { AuthActionCreators } from "./auth/action-creators";
 
 export const allActionCreators = {
-  ...StartActionCreators,
+  ...AuthActionCreators,
 };

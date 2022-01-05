@@ -1,24 +1,43 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { useActions, useTypedSelector } from "./hooks";
 import Account from "./pages/Account";
 
 // import routes from './routes';
 // import { useRoutes } from 'react-router-dom';
 
 import Home from "./pages/Home";
-import Signin from "./pages/Signin";
+import Login from "./pages/Login";
+
+function RequireAuth() {
+  const { isAuth } = useTypedSelector((state) => state.AuthState);
+  const location = useLocation();
+  console.log(isAuth);
+
+  if (!isAuth) {
+    return <Navigate to="/login" state={{ from: location }} />;
+  }
+
+  return <Outlet />;
+}
 
 const App = function (): JSX.Element {
-  // const { isLoggedIn } = useSelector((state) => state.auth);
-  // const routing = useRoutes(routes(isLoggedIn));
+  const { checkAuth } = useActions();
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
 
   return (
     <>
-      {/* {routing} */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="account" element={<Account />} />
-        <Route path="signin" element={<Signin />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route element={<RequireAuth />}>
+          <Route path="/account" element={<Account />} />
+        </Route>
       </Routes>
     </>
   );

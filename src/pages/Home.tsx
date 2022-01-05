@@ -4,19 +4,12 @@ import { withLayout } from "../layout/Layout";
 import { useTypedSelector, useActions } from "../hooks";
 
 const Home = () => {
-  const { start } = useTypedSelector((state) => state.startStore);
-  const { setStart } = useActions();
-
-  console.log(start);
-
-  useEffect(() => {
-    setStart("hello");
-  }, []);
+  // const { start } = useTypedSelector((state) => state.AuthState);
+  // const {} = useActions();
 
   return (
     <>
       <h1>Start React KIT</h1>
-      <div>{start} from Redux</div>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import startStore from "./startStore";
+import AuthState from "./auth";
 
 export default {
-  startStore,
+  AuthState,
 };
