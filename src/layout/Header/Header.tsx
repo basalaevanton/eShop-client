@@ -1,15 +1,15 @@
-import React from 'react';
-import { HeaderProps } from './Header.props';
-import styles from './Header.module.scss';
-import { ReactComponent as Logo } from '../../images/logo.svg';
+import React from "react";
+import { HeaderProps } from "./Header.props";
+import styles from "./Header.module.scss";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 
-import { ReactComponent as Like } from '../../images/like.svg';
-import { ReactComponent as User } from '../../images/user.svg';
-import { ReactComponent as Cart } from '../../images/cart.svg';
+import { ReactComponent as Like } from "../../images/like.svg";
+import { ReactComponent as User } from "../../images/user.svg";
+import { ReactComponent as Cart } from "../../images/cart.svg";
 
-import cn from 'classnames';
+import cn from "classnames";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   return (

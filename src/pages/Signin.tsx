@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { withLayout } from "../layout/Layout";
 
-
 import { useTypedSelector, useActions } from "../hooks";
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
     <>
       <h1>Start React KIT</h1>
       <div>{start} from Redux</div>
-   
     </>
   );
 };

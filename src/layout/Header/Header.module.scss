@@ -1,46 +1,59 @@
 .header {
-  background-color: var(--lightGray);
   padding: 26px 0 26px;
+
+  background-color: var(--lightGray);
 }
+
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   justify-items: center;
+
   align-items: center;
 }
+
 .center {
   transition: all 1s;
+
   &:hover {
     transform: scale(1.2);
   }
 }
+
 .groupNav {
   display: flex;
 
   & a {
-    padding: 0 30px;
     position: relative;
+
+    padding: 0 30px;
+
     transition: all linear 0.5s;
 
-    &:after {
-      content: '';
+    &::after {
       display: block;
+
+      width: 0;
       height: 1px;
-      width: 0px;
-      background: var(--main);
+
+      content: "";
       transition: all linear 0.5s;
+
+      background: var(--main);
     }
+
     &:hover {
       color: var(--main);
     }
+
     &:hover::after {
       width: 100%;
     }
 
     &:hover svg {
-      fill: var(--main);
       transition: all linear 0.5s;
+      fill: var(--main);
     }
   }
 }
