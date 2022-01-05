@@ -4,7 +4,7 @@ import { withLayout } from "../layout/Layout";
 
 import { useTypedSelector, useActions } from "../hooks";
 
-const Start = () => {
+const Home = () => {
   const { start } = useTypedSelector((state) => state.startStore);
   const { setStart } = useActions();
 
@@ -23,4 +23,4 @@ const Start = () => {
   );
 };
 
-export default withLayout(Start);
+export default withLayout(Home);

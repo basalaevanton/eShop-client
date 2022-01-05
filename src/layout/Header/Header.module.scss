@@ -1,12 +1,46 @@
 .header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  border-bottom: 1px solid black;
+  background-color: var(--lightGray);
+  padding: 26px 0 26px;
 }
-
 .nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.center {
+  transition: all 1s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.groupNav {
   display: flex;
-  flex-direction: column;
+
+  & a {
+    padding: 0 30px;
+    position: relative;
+    transition: all linear 0.5s;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 0px;
+      background: var(--main);
+      transition: all linear 0.5s;
+    }
+    &:hover {
+      color: var(--main);
+    }
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover svg {
+      fill: var(--main);
+      transition: all linear 0.5s;
+    }
+  }
 }

@@ -1,16 +1,21 @@
-import React from "react";
-import { FooterProps } from "./Footer.props";
-import styles from "./Footer.module.scss";
+import React from 'react';
+import { FooterProps } from './Footer.props';
+import styles from './Footer.module.scss';
 
-import cn from "classnames";
-import { Typography } from "@mui/material";
+import cn from 'classnames';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../../images/logo.svg';
 
 export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
   return (
     <footer className={cn(className, styles.footer)} {...props}>
-      <Typography variant="h1" component="div">
-        Footer
-      </Typography>
+      <nav>
+        <div className={styles.center}>
+          <Link to="/">
+            <Logo />
+          </Link>
+        </div>
+      </nav>
     </footer>
   );
 };

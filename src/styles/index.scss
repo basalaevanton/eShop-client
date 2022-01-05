@@ -12,7 +12,7 @@ body {
   color: black;
   background: white;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   line-height: 24px;
 }
@@ -31,5 +31,7 @@ ul {
 
 :root {
   // --black: black;
-  // --white: #FFF;
+  --white: #F5F5F;
+  --lightGray: rgba(245, 245, 245, 1);
+  --main: #ed165f;
 }

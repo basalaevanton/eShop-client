@@ -1,11 +1,13 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Account from './pages/Account';
 
 // import routes from './routes';
 // import { useRoutes } from 'react-router-dom';
 
-import SecondPage from "./pages/SecondPage";
-import Start from "./pages/Start";
+
+import Home from './pages/Home';
+import Signin from './pages/Signin';
 
 const App = function (): JSX.Element {
   // const { isLoggedIn } = useSelector((state) => state.auth);
@@ -15,8 +17,9 @@ const App = function (): JSX.Element {
     <>
       {/* {routing} */}
       <Routes>
-        <Route path="/" element={<Start />} />
-        <Route path="second" element={<SecondPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="account" element={<Account />} />
+        <Route path="signin" element={<Signin/>} />
       </Routes>
     </>
   );
