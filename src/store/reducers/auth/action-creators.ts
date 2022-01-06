@@ -34,6 +34,8 @@ export const AuthActionCreators = {
     try {
       dispatch(AuthActionCreators.setIsLoading(true));
       const response = await AuthService.login(email, password);
+      console.log(response.data);
+
       localStorage.setItem("token", response.data.accessToken);
 
       dispatch(AuthActionCreators.setIsAuth(true));
@@ -57,9 +59,13 @@ export const AuthActionCreators = {
   checkAuth: () => async (dispatch: AppDispatch) => {
     try {
       dispatch(AuthActionCreators.setIsLoading(true));
-      const response = await axios.get<AuthResponse>(`${API.HOST}/refresh`, {
-        withCredentials: true,
-      });
+      const response = await axios.get<AuthResponse>(
+        `${API.HOST}auth/refresh`,
+        {
+          withCredentials: true,
+        }
+      );
+
       localStorage.setItem("token", response.data.accessToken);
 
       dispatch(AuthActionCreators.setIsAuth(true));
