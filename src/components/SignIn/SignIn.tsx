@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { useActions } from "../../hooks";
 
 export const SignIn = (): JSX.Element => {
-  const navigate = useNavigate();
   const { login } = useActions();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [check, setCheck] = useState(true);
 
   const signIn = () => {
     login(email, password);
-    navigate("/account");
   };
 
   return (
@@ -41,7 +40,9 @@ export const SignIn = (): JSX.Element => {
           <Form.Group className="mb-3" controlId="formLoginCheckbox">
             <Form.Check
               type="checkbox"
-              label="Check me out(пока не работает)"
+              checked={check}
+              onChange={() => setCheck(true)}
+              label="Remember me"
             />
           </Form.Group>
           <Button variant="main" onClick={signIn}>
