@@ -1,5 +1,5 @@
 import { AppDispatch } from "../../index";
-import { IUser } from "../../../interfaces/user.interface";
+import { CreateUser, IUser } from "../../../interfaces/user.interface";
 import {
   AuthActionEnum,
   SetAuthAction,
@@ -30,6 +30,7 @@ export const AuthActionCreators = {
     type: AuthActionEnum.SET_ERROR,
     payload,
   }),
+
   login: (email: string, password: string) => async (dispatch: AppDispatch) => {
     try {
       dispatch(AuthActionCreators.setIsLoading(true));
@@ -65,6 +66,25 @@ export const AuthActionCreators = {
           withCredentials: true,
         }
       );
+
+      localStorage.setItem("token", response.data.accessToken);
+
+      dispatch(AuthActionCreators.setIsAuth(true));
+      dispatch(AuthActionCreators.setUser(response.data.user));
+    } catch (e: any) {
+      dispatch(AuthActionCreators.setError(e.response?.data?.message));
+    } finally {
+      dispatch(AuthActionCreators.setIsLoading(false));
+    }
+  },
+
+  registration: (user: CreateUser) => async (dispatch: AppDispatch) => {
+    try {
+      dispatch(AuthActionCreators.setIsLoading(true));
+      console.log(user);
+
+      const response = await AuthService.registration(user);
+      console.log(response.data);
 
       localStorage.setItem("token", response.data.accessToken);
 

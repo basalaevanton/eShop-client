@@ -1,6 +1,7 @@
 import { AxiosResponse } from "axios";
 import $api from "../http";
 import { AuthResponse } from "../interfaces/authResponse";
+import { CreateUser } from "../interfaces/user.interface";
 
 export default class AuthService {
   static async login(
@@ -11,10 +12,9 @@ export default class AuthService {
   }
 
   static async registration(
-    email: string,
-    password: string
+    user: CreateUser
   ): Promise<AxiosResponse<AuthResponse>> {
-    return $api.post<AuthResponse>("/auth/registration", { email, password });
+    return $api.post<AuthResponse>("/auth/registration", user);
   }
 
   static async logout(): Promise<void> {

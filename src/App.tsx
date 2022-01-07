@@ -7,12 +7,11 @@ import Account from "./pages/Account";
 // import { useRoutes } from 'react-router-dom';
 
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import AuthPage from "./pages/AuthPage";
 
 function RequireAuth() {
   const { isAuth } = useTypedSelector((state) => state.AuthState);
   const location = useLocation();
-  console.log(isAuth);
 
   if (!isAuth) {
     return <Navigate to="/login" state={{ from: location }} />;
@@ -34,7 +33,7 @@ const App = function (): JSX.Element {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<AuthPage />} />
         <Route element={<RequireAuth />}>
           <Route path="/account" element={<Account />} />
         </Route>

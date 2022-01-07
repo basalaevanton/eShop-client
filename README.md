@@ -1,25 +1,11 @@
-# Стартовая сборка React TS.
+# EShop Safari.
 
 - typescript
-- redux, redux thunk, redux devtools
+- redux, redux thunk,
 - react router dom
 - sass
-- material UI
-- classnames
-- normalize.css
+- bootstrap
 - axios
-- eslint, stylelint, prettier
-- husky
--
-
-## Layout
-
-- layout (header, body, footer)
-
-## Hooks
-
-- useScrollY
-- useAction & use TypedSelector (for redux)
 
 ## Available Scripts
 
