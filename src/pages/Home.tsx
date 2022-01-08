@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { withLayout } from "../layout/Layout";
+import { withAppLayout } from "../layout/";
 
 import { useTypedSelector, useActions } from "../hooks";
 
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default withLayout(Home);
+export default withAppLayout(Home);

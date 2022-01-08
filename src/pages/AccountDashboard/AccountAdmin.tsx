@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
-import { useActions } from "../hooks";
-import { withLayout } from "../layout/Layout";
+import { useActions } from "../../hooks";
+import { withAppLayout } from "../../layout/";
 
-const Account = () => {
+const AccountAdmin = () => {
   const { logout } = useActions();
 
   return (
@@ -16,4 +16,4 @@ const Account = () => {
   );
 };
 
-export default withLayout(Account);
+export default withAppLayout(AccountAdmin);

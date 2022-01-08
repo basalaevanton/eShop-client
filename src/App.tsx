@@ -60,7 +60,8 @@ const App = function (): JSX.Element {
     }
   }, []);
 
-  const routing = useRoutes(routes(isAuth));
+  // const routing = useRoutes(routes(isAuth));
+  const routing = useRoutes(routes(true));
 
   return <>{routing}</>;
 };

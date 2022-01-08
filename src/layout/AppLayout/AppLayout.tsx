@@ -1,9 +1,8 @@
-import { LayoutProps } from "./Layout.props";
-import styles from "./Layout.module.scss";
+import { LayoutProps } from "./AppLayout.props";
+import styles from "./AppLayout.module.scss";
 
 import React, { FunctionComponent } from "react";
-import { Header } from "./Header/Header";
-import { Footer } from "./Footer/Footer";
+import { Header, Footer } from "../../components";
 
 import cn from "classnames";
 
@@ -19,7 +18,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(
+export const withAppLayout = <T extends Record<string, unknown>>(
   Component: FunctionComponent<T>
 ) => {
   return function withLayoutComponent(props: T): JSX.Element {

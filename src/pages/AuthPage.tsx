@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withLayout } from "../layout/Layout";
+import { withAppLayout } from "../layout/";
 
 import { useTypedSelector, useActions } from "../hooks";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
@@ -21,4 +21,4 @@ const AuthPage = () => {
   );
 };
 
-export default withLayout(AuthPage);
+export default withAppLayout(AuthPage);
