@@ -17,5 +17,5 @@ export interface CreateUser extends user {
 export interface AccountUser extends user {
   userId: number;
   gender: string;
-  birtday: Date;
+  birthday: Date;
 }

@@ -1,31 +1,33 @@
 .navigation {
-  position: relative;
+	position: relative;
 }
 
 .body {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .button {
-  margin: 0 10px;
-  padding: 10px 0;
+	margin: 0 10px;
+	padding: 10px 0;
 
-  transition: 0.5s all linear;
+	transition: 0.5s all linear;
 
-  color: var(--main) !important;
+	color: var(--main) !important;
 
-  & svg {
-    margin-right: 10px;
-    fill: var(--main);
-  }
+	& svg {
+		margin-right: 10px;
 
-  &:hover {
-    color: var(--white) !important;
-  }
+		transition: 0.5s all linear;
+		fill: var(--main);
+	}
 
-  &:hover svg {
-    transition: 0.5s all linear;
-    fill: var(--white) !important;
-  }
+	&:hover {
+		color: var(--white) !important;
+	}
+
+	&:hover svg {
+		transition: 0.5s all linear;
+		fill: var(--white) !important;
+	}
 }

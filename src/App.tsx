@@ -44,19 +44,19 @@
 
 // export default App;
 
-import React, { useEffect } from "react";
-import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
-import { useActions, useTypedSelector } from "./hooks";
+import React, { useEffect } from 'react';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { useActions, useTypedSelector } from './hooks';
 
-import { useRoutes } from "react-router-dom";
-import routes from "./router/router";
+import { useRoutes } from 'react-router-dom';
+import routes from './router/router';
 
 const App = function (): JSX.Element {
   const { isAuth, user } = useTypedSelector((state) => state.AuthState);
   const { userAccount } = useTypedSelector((state) => state.AccountDash);
   const { checkAuth, setAccountUser, fetchUserInfo } = useActions();
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem('token')) {
       checkAuth();
     }
   }, []);
