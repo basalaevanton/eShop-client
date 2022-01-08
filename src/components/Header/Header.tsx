@@ -3,9 +3,9 @@ import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.scss";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 
-import { ReactComponent as Like } from "../../images/like.svg";
-import { ReactComponent as User } from "../../images/user.svg";
-import { ReactComponent as Cart } from "../../images/cart.svg";
+import { ReactComponent as Like } from "../../images/HeaderImg/like.svg";
+import { ReactComponent as User } from "../../images/HeaderImg/user.svg";
+import { ReactComponent as Cart } from "../../images/HeaderImg/cart.svg";
 
 import cn from "classnames";
 

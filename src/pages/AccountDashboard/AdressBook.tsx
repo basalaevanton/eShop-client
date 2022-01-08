@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useActions } from "../../hooks";
-import { withAppLayout } from "../../layout";
+import { AccLayout, withAppLayout } from "../../layout";
 
 const AdressBook = () => {
   const { logout } = useActions();
 
   return (
     <>
-      <h2>Account</h2>
-      <Button variant="main" onClick={logout}>
-        LogOut
-      </Button>
+      <AccLayout>
+        <h2>Account Adress</h2>
+      </AccLayout>
     </>
   );
 };

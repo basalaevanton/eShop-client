@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.activeMenu {
+  color: var(--white);
+  background: var(--main);
+
+  & svg {
+    fill: var(--white);
+  }
+}
+
+.itemMenu {
+  display: flex;
+  align-items: center;
+
+  margin: 10px;
+  padding: 10px;
+
+  transition: 1s;
+
+  & svg {
+    margin-right: 10px;
+
+    transition: 1s;
+    fill: var(--black);
+  }
+
+  &:hover {
+    color: var(--white);
+    background: var(--main);
+
+    & svg {
+      fill: var(--white);
+    }
+  }
+}

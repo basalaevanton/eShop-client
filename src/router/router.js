@@ -14,8 +14,10 @@ import {
 const routes = (isLoggedIn) => [
   {
     path: "account",
-    element: isLoggedIn ? <AccountInfo /> : <AuthPage />,
+    element: isLoggedIn ? <Outlet /> : <AuthPage />,
     children: [
+      { path: "", element: <Navigate to="/account/info" /> },
+      { path: "info", element: <AccountInfo /> },
       { path: "adress", element: <AdressBook /> },
       { path: "favorites", element: <Favorites /> },
       { path: "orders", element: <Orders /> },
