@@ -9,9 +9,16 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { useActions } from "../../hooks";
 
 import { ReactComponent as SignOut } from "../../images/SignOut.svg";
+import { useNavigate } from "react-router-dom";
 
 export const AccLayout = ({ children }: AccLayoutProps): JSX.Element => {
+  const navigate = useNavigate();
   const { logout } = useActions();
+
+  const signOut = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <>
@@ -25,7 +32,7 @@ export const AccLayout = ({ children }: AccLayoutProps): JSX.Element => {
               <AccNavigation className={styles.navigation} />
               <Button
                 variant="outline-main"
-                onClick={logout}
+                onClick={signOut}
                 className={styles.button}
               >
                 <SignOut />

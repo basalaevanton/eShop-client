@@ -3,11 +3,6 @@
   flex-direction: column;
 }
 
-.activeMenu {
-  color: var(--white);
-  background: var(--main);
-}
-
 .itemMenu {
   display: flex;
   align-items: center;
@@ -31,5 +26,14 @@
     & svg {
       fill: var(--white);
     }
+  }
+}
+/* stylelint-disable no-descending-specificity */
+.activeMenu {
+  color: var(--white);
+  background: var(--main);
+
+  & svg {
+    fill: var(--white);
   }
 }
