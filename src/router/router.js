@@ -16,11 +16,10 @@ const routes = (isLoggedIn) => [
     path: "account",
     element: isLoggedIn ? <AccountInfo /> : <AuthPage />,
     children: [
-      { path: "/account", element: <AdressBook /> },
-      { path: "/adress", element: <AdressBook /> },
-      { path: "/favorites", element: <Favorites /> },
-      { path: "/orders", element: <Orders /> },
-      { path: "/admin", element: <AccountAdmin /> },
+      { path: "adress", element: <AdressBook /> },
+      { path: "favorites", element: <Favorites /> },
+      { path: "orders", element: <Orders /> },
+      { path: "admin", element: <AccountAdmin /> },
     ],
   },
   {
