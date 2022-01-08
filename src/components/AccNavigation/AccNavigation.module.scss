@@ -6,10 +6,6 @@
 .activeMenu {
   color: var(--white);
   background: var(--main);
-
-  & svg {
-    fill: var(--white);
-  }
 }
 
 .itemMenu {

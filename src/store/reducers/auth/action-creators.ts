@@ -60,12 +60,13 @@ export const AuthActionCreators = {
 
   checkAuth: () => async (dispatch: AppDispatch) => {
     try {
+      dispatch(AuthActionCreators.setError(""));
       dispatch(AuthActionCreators.setIsLoading(true));
       const response = await axios.get(`${API.HOST}auth/refresh`, {
         withCredentials: true,
       });
 
-      localStorage.setItem("token", response.data);
+      localStorage.setItem("token", response.data.token);
 
       dispatch(AuthActionCreators.setIsAuth(true));
       dispatch(AuthActionCreators.setUser(response.data.user));

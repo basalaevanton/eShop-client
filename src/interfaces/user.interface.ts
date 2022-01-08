@@ -1,12 +1,21 @@
 export interface IUser {
   email: string;
   isActivated: boolean;
-  id: string;
+  id: number;
 }
 
-export interface CreateUser {
+export interface user {
   firstName: string;
   lastName: string;
   email: string;
+}
+
+export interface CreateUser extends user {
   password: string;
+}
+
+export interface AccountUser extends user {
+  userId: number;
+  gender: string;
+  birtday: Date;
 }

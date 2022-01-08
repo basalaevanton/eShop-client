@@ -52,16 +52,17 @@ import { useRoutes } from "react-router-dom";
 import routes from "./router/router";
 
 const App = function (): JSX.Element {
-  const { isAuth } = useTypedSelector((state) => state.AuthState);
-  const { checkAuth } = useActions();
+  const { isAuth, user } = useTypedSelector((state) => state.AuthState);
+  const { userAccount } = useTypedSelector((state) => state.AccountDash);
+  const { checkAuth, setAccountUser, fetchUserInfo } = useActions();
   useEffect(() => {
     if (localStorage.getItem("token")) {
       checkAuth();
     }
   }, []);
 
-  // const routing = useRoutes(routes(isAuth));
-  const routing = useRoutes(routes(true));
+  const routing = useRoutes(routes(isAuth));
+  // const routing = useRoutes(routes(true));
 
   return <>{routing}</>;
 };
