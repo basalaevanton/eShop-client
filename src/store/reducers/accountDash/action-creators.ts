@@ -11,6 +11,8 @@ import AuthService from '../../../services/AuthService';
 import axios from 'axios';
 
 import { API } from '../../../helpers/api';
+import { IProduct } from '../../../interfaces/product.interface';
+import ProductService from '../../../services/ProductService';
 
 export const AccountActionCreators = {
   setAccountUser: (user: AccountUser): SetUserAction => ({
@@ -48,7 +50,6 @@ export const AccountActionCreators = {
 
       const response = await UserService.editUserInfo(user);
       console.log(response);
-      
 
       dispatch(AccountActionCreators.setAccountUser(response.data));
     } catch (e: any) {
@@ -59,4 +60,20 @@ export const AccountActionCreators = {
       dispatch(AccountActionCreators.setAccountIsLoading(false));
     }
   },
+
+  // addNewProduct: (product: IProduct) => async (dispatch: AppDispatch) => {
+  //   try {
+  //     dispatch(AccountActionCreators.setAccountIsLoading(true));
+
+  //     const response = await ProductService.addNewProduct(product);
+
+  //     console.log(response);
+  //   } catch (e: any) {
+  //     dispatch(
+  //       AccountActionCreators.setAccountError(e.response?.data?.message)
+  //     );
+  //   } finally {
+  //     dispatch(AccountActionCreators.setAccountIsLoading(false));
+  //   }
+  // },
 };

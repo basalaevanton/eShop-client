@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import $api from "../http";
-import { AuthResponse } from "../interfaces/authResponse";
+import { AuthResponse } from "../interfaces/authResponse.interface";
 import { CreateUser } from "../interfaces/user.interface";
 
 export default class AuthService {

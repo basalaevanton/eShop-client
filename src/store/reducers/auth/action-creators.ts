@@ -10,7 +10,7 @@ import {
 import UserService from '../../../services/UserService';
 import AuthService from '../../../services/AuthService';
 import axios from 'axios';
-import { AuthResponse } from '../../../interfaces/authResponse';
+import { AuthResponse } from '../../../interfaces/authResponse.interface';
 import { API } from '../../../helpers/api';
 
 export const AuthActionCreators = {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API } from "../helpers/api";
-import { AuthResponse } from "../interfaces/authResponse";
+import { AuthResponse } from "../interfaces/authResponse.interface";
 
 const $api = axios.create({
   withCredentials: true,
