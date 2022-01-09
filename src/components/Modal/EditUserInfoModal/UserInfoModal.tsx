@@ -26,7 +26,7 @@ export const UserInfoModal = ({
 
   const close = () => {
     editUserInfo(user);
-    console.log(user);
+    onHide();
   };
 
   return (

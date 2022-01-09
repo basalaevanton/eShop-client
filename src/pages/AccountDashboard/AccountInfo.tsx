@@ -8,7 +8,7 @@ const AccountInfo = () => {
   const [userModalVisible, setUserModalVisible] = useState<boolean>(false);
 
   const { userAccount } = useTypedSelector((state) => state.AccountDash);
-  const { user } = useTypedSelector((state) => state.AuthState);
+  const { user, isAuth } = useTypedSelector((state) => state.AuthState);
   const { fetchUserInfo } = useActions();
 
   useEffect(() => {

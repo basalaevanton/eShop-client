@@ -29,7 +29,9 @@ export const AccLayout = ({ children }: AccLayoutProps): JSX.Element => {
               <Card.Title>ACCOUNT DASHBOARD</Card.Title>
             </Card.Header>
             <Card.Body className={styles.body}>
+              
               <AccNavigation className={styles.navigation} />
+
               <Button
                 variant="outline-main"
                 onClick={signOut}

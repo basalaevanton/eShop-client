@@ -1,17 +1,17 @@
-import { AppDispatch } from "../../index";
-import { CreateUser, IUser } from "../../../interfaces/user.interface";
+import { AppDispatch } from '../../index';
+import { CreateUser, IUser } from '../../../interfaces/user.interface';
 import {
   AuthActionEnum,
   SetAuthAction,
   SetErrorAction,
   SetIsLoadingAction,
   SetUserAction,
-} from "./types";
-import UserService from "../../../services/UserService";
-import AuthService from "../../../services/AuthService";
-import axios from "axios";
-import { AuthResponse } from "../../../interfaces/authResponse";
-import { API } from "../../../helpers/api";
+} from './types';
+import UserService from '../../../services/UserService';
+import AuthService from '../../../services/AuthService';
+import axios from 'axios';
+import { AuthResponse } from '../../../interfaces/authResponse';
+import { API } from '../../../helpers/api';
 
 export const AuthActionCreators = {
   setUser: (user: IUser): SetUserAction => ({
@@ -36,7 +36,7 @@ export const AuthActionCreators = {
       dispatch(AuthActionCreators.setIsLoading(true));
       const response = await AuthService.login(email, password);
 
-      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem('token', response.data.accessToken);
 
       dispatch(AuthActionCreators.setIsAuth(true));
       dispatch(AuthActionCreators.setUser(response.data.user));
@@ -50,9 +50,9 @@ export const AuthActionCreators = {
     try {
       const response = await AuthService.logout();
 
-      localStorage.removeItem("token");
       dispatch(AuthActionCreators.setUser({} as IUser));
       dispatch(AuthActionCreators.setIsAuth(false));
+      localStorage.removeItem('token');
     } catch (e: any) {
       dispatch(AuthActionCreators.setError(e.response?.data?.message));
     }
@@ -60,13 +60,13 @@ export const AuthActionCreators = {
 
   checkAuth: () => async (dispatch: AppDispatch) => {
     try {
-      dispatch(AuthActionCreators.setError(""));
+      dispatch(AuthActionCreators.setError(''));
       dispatch(AuthActionCreators.setIsLoading(true));
       const response = await axios.get(`${API.HOST}auth/refresh`, {
         withCredentials: true,
       });
 
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem('token', response.data.token);
 
       dispatch(AuthActionCreators.setIsAuth(true));
       dispatch(AuthActionCreators.setUser(response.data.user));
@@ -83,10 +83,10 @@ export const AuthActionCreators = {
 
       const response = await AuthService.registration(user);
 
-      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem('token', response.data.accessToken);
 
-      dispatch(AuthActionCreators.setIsAuth(true));
       dispatch(AuthActionCreators.setUser(response.data.user));
+      dispatch(AuthActionCreators.setIsAuth(true));
     } catch (e: any) {
       dispatch(AuthActionCreators.setError(e.response?.data?.message));
     } finally {

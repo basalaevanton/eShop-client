@@ -1,4 +1,4 @@
-import { IUser } from "../../../interfaces/user.interface";
+import { IUser } from '../../../interfaces/user.interface';
 
 export interface AuthState {
   isAuth: boolean;
@@ -8,10 +8,10 @@ export interface AuthState {
 }
 
 export enum AuthActionEnum {
-  SET_AUTH = "SET_AUTH",
-  SET_ERROR = "SET_ERROR",
-  SET_USER = "SET_USER",
-  SET_IS_LOADING = "SET_IS_LOADING",
+  SET_AUTH = 'SET_AUTH',
+  SET_ERROR = 'SET_ERROR',
+  SET_USER = 'SET_USER',
+  SET_IS_LOADING = 'SET_IS_LOADING',
 }
 
 export interface SetAuthAction {
