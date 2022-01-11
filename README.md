@@ -27,3 +27,18 @@ npm run prettier
 
 Debug с помощью vsCode
 После запуска нажать 'F5'
+
+## Старт приложения - Docker
+
+- Хост сервера - 'http://localhost:5000'
+- Хост клиента - 'http://localhost:5000'
+
+### `gh repo clone basalaevanton/eShop-server`
+
+### `gh repo clone basalaevanton/eShop-client`
+
+### Переносим docker-compose.yml в корень, где лежат client & server
+
+### `docker-compose build`
+
+### `docker-compose up`

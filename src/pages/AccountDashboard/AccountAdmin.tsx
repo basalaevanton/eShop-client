@@ -19,7 +19,7 @@ const AccountAdmin = () => {
     price: 0,
     image: '',
   });
-  const { addNewProduct } = useActions();
+  // const { addNewProduct } = useActions();
 
   const formData = new FormData();
   formData.append('name', product.name);
