@@ -30,6 +30,8 @@ const AccountAdmin = () => {
   formData.append('image', product.image);
 
   const sendProduct = async () => {
+    
+
     await axios.post('http://localhost:5000/products', formData);
     // addNewProduct(product);
   };

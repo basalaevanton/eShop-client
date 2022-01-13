@@ -26,12 +26,44 @@ export const Color: string[] = [
   'Blue',
 ];
 
-export interface IProduct {
-  id?: number;
+export interface Category {
+  id: number;
   name: string;
-  category: string;
-  size: string;
-  color: string;
+  productId: number;
+}
+
+export interface ProductSize {
+  id: number;
+  sizeId: number;
+  productId: number;
+}
+
+export interface Size {
+  id: number;
+  name: string;
+  ProductSize: ProductSize;
+}
+
+export interface ProductColor {
+  id: number;
+  colorId: number;
+  productId: number;
+}
+
+export interface Color {
+  id: number;
+  name: string;
+  ProductColor: ProductColor;
+}
+
+export interface IProduct {
+  id: number;
+  name: string;
   price: number;
-  image: any;
+  image: string;
+  createdAt: Date;
+  updatedAt: Date;
+  category: Category;
+  size: Size[];
+  color: Color[];
 }

@@ -5,6 +5,7 @@ import { IProduct } from '../interfaces/product.interface';
 import { AccountUser } from '../interfaces/user.interface';
 
 export default class ProductService {
+  
   static async fetchProducts(): Promise<AxiosResponse<IProduct[]>> {
     return $api.get(`/products/`);
   }
